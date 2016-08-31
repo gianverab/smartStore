@@ -1,0 +1,40 @@
+
+{
+  "name": "smartstore",
+  "version": "0.1.0",
+  "description": "A smartwach showcase app built with AngularJs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/gianverab/smartStore.git"
+  },
+  "keywords": [
+    "spa",
+    "angular",
+    "gulp",
+    "node"
+  ],
+  "author": "Gian Vera",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gianverab/smartStore/issues"
+  },
+  "homepage": "https://github.com/gianverab/smartStore#readme",
+  "devDependencies": {
+    "browser-sync": "^2.14.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0"
+  }
+}
