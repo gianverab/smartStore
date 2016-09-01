@@ -22,8 +22,19 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
-	<h1>{{"Hello" + " World!"}}</h1>
+<body ng-controller="StoreCtrl as store">
+    <!-- Products Container -->
+    <div class="list-group">
+        <!-- Product Item -->
+        <div class="list-group-item" ng-repeat="product in store.products">
+            <div ng-hide="{{product.soldOut}}">
+                <h1>{{product.name}}</h1>
+                <h2>${{product.price}}</h2>
+                <p>{{product.description}}</p>
+                <button ng-show="{{product.purchase}}">Add to Cart</button>
+            </div>
+        </div>
+    </div>
 	
 	<!-- ANGULARJS  -->
   	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
