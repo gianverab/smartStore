@@ -12,7 +12,7 @@
 	<!-- BOOTSTRAP CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <!-- GOOGLE FONT -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700,100|Montserrat:400,700">
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="app.min.css">
     
@@ -23,18 +23,45 @@
     <![endif]-->
 </head>
 <body ng-controller="StoreCtrl as store">
-    <!-- Products Container -->
-    <div class="list-group">
-        <!-- Product Item -->
-        <div class="list-group-item" ng-repeat="product in store.products">
-            <div ng-hide="{{product.soldOut}}">
-                <h1>{{product.name}}</h1>
-                <h2>${{product.price}}</h2>
-                <p>{{product.description}}</p>
-                <button ng-show="{{product.purchase}}">Add to Cart</button>
+    <div id="app-container">
+        <header id="app-header">
+            <h1 class="title">Smart Store</h1> 
+            <p>A showcase of your favorite smartwatches!</p>   
+        </header><!-- /#app-header --> 
+
+        <section id="app-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                      <!-- Products Container -->
+                      <div class="list-group">
+                        <!-- Product Item -->
+                        <div class="list-group-item" ng-repeat="product in store.products">
+                          <div class="row">
+                            <div class="col-xs-12">
+                              <div ng-hide="{{product.soldOut}}">
+                                <h1>{{product.name}}</h1>
+                                <img ng-src="{{product.images[0].full}}"/>
+                                <h2>{{product.price | currency}}</h2>
+                                <p>{{product.description}}</p>
+                                <button ng-show="{{product.purchase}}">Add to Cart</button>
+                              </div>
+                            </div>
+                          </div>
+                              
+                        </div>
+                      </div> 
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
+        </section><!-- /#app-body -->
+
+        <footer id="app-footer">
+        <p>Gian Vera project on AngularJs.</p>
+      </footer><!-- /#app-footer --> 
+    </div><!-- /#app-container --> 
+
+    
 	
 	<!-- ANGULARJS  -->
   	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
