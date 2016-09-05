@@ -2,6 +2,8 @@
 $base-font: "Montserrat";
 $second-font: "Roboto Slab";
 $base-color: #009688;
+$light-color: #b2dfdb;
+$dark-color: #00796b;
 $base-text: #212121;
 $divider-color: #bdbdbd;
 
@@ -61,6 +63,12 @@ h1, h2, h3, h4, h5, h6 {
   		display: block;
   	}
   }
+  .panel{
+  	h4{
+  		font-family: $second-font;
+  		font-size: 1.5em;
+  	}
+  }
 }
 #app-footer {
   width: 100%;
@@ -73,5 +81,16 @@ h1, h2, h3, h4, h5, h6 {
 	  border-top: 1px solid $divider-color;
 	}
 }
-	
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color: #fff;
+    background-color: $base-color;
+}
+
+.nav>li>a{
+	color: $dark-color;
+}
+.nav>li>a:hover {
+    text-decoration: none;
+    background-color: $light-color;
+}	
 
