@@ -69,6 +69,18 @@ h1, h2, h3, h4, h5, h6 {
   		font-size: 1.5em;
   	}
   }
+  form{
+  	select, textarea, input{
+  		display: block;
+  		width: 100%;
+  		padding: 4px;
+  		border-radius: 3px;
+  		margin-bottom: 10px;
+  	}
+  	input{
+  		box-shadow: none;
+  	}
+	}
 }
 #app-footer {
   width: 100%;

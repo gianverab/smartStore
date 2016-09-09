@@ -65,7 +65,39 @@
                         </div>
                         <div class="panel" ng-show="panel.isSelected(3)">
                           <h4>Reviews</h4>
-                          <p>Not yet!</p>
+                          <blockquote ng-repeat="review in product.reviews">
+                            <b>Stars: {{review.stars}}</b>
+                            <p>"{{review.text}}"</p>
+                            <cite>by: {{review.author}}</cite>
+                          </blockquote>
+                          <h4>Submit a review</h4>
+                          <form action="" name="reviewForm">
+                            <div class="row">
+                              <blockquote>
+                                <b>Stars: {{review.stars}}</b>
+                                <p>"{{review.text}}"</p>
+                                <cite>by: {{review.author}}</cite>
+                              </blockquote>
+                              <div class="col-xs-10 col-xs-offset-1">
+                                <select ng-model="review.stars">
+                                  <option value="1">1 star</option>
+                                  <option value="2">2 stars</option>
+                                  <option value="3">3 stars</option>
+                                  <option value="4">4 stars</option>
+                                  <option value="5">5 stars</option>
+                                </select>
+                              </div>
+                              <div class="col-xs-10 col-xs-offset-1">
+                                <textarea ng-model="review.text" placeholder="Write a short review of the smartwatch" ></textarea>
+                              </div>
+                              <div class="col-xs-10 col-xs-offset-1">
+                                <input ng-model="review.author" type="email" placeholder="name@company.com" />
+                              </div>
+                              <div class="col-xs-10 col-xs-offset-1">
+                                <input type="submit" value="Submit"/>
+                              </div>
+                            </div>
+                          </form>
                         </div>
                       </section>
                       <button ng-show="{{product.purchase}}">Add to Cart</button>

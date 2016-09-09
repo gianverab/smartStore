@@ -5,7 +5,7 @@
 		this.products = watches;
 	})
 	.controller('PanelCtrl', function() {
-		this.tab = 1;
+		this.tab = 3;
 
 		this.selectTab = function (setTab) {
 			this.tab = setTab;
@@ -29,6 +29,18 @@
 					color: 'Black, Silver',
 					waterproof: 'No',
 					battery: 'Up to 3 days'
+				}
+			],
+			reviews: [
+				{
+					stars: 5,
+					text: 'It looks nice and is definitely worth it for the price!',
+					author: 'jhons@smith.com'
+				},
+				{
+					stars: 4,
+					text: 'I love the Mota G2, it works great!',
+					author: 'jane@doe.com'
 				}
 			],
 			images: [
@@ -55,6 +67,18 @@
 					color: 'Black, Gold, Silver',
 					waterproof: 'No',
 					battery: 'Up to 4 days'
+				}
+			],
+			reviews: [
+				{
+					stars: 3,
+					text: 'It is nice but not sure if worth it for the price',
+					author: 'gian@vera.com'
+				},
+				{
+					stars: 4,
+					text: 'It is perfect for me!',
+					author: 'mark@campbell.com'
 				}
 			],
 			images: [
@@ -87,6 +111,18 @@
 					battery: 'Up to 7 days'
 				}
 			],
+			reviews: [
+				{
+					stars: 5,
+					text: 'I wanna buy it today!',
+					author: 'chris@orwig.com'
+				},
+				{
+					stars: 1,
+					text: 'Are you kidding me?',
+					author: 'geoff@blake.com'
+				}
+			],
 			images: [
 				{
 					full: '/assets/IfitVue-blue_full.jpg',
@@ -115,6 +151,13 @@
 					color: 'Shark Grey, Bright Azure, Wild Sand',
 					waterproof: 'Yes',
 					battery: 'Up to 6 days'
+				}
+			],
+			reviews: [
+				{
+					stars: 3,
+					text: 'You can do it better than that!',
+					author: 'matt@kloskowsky.com'
 				}
 			],
 			images: [
@@ -147,6 +190,18 @@
 					battery: 'Up to 18 hours'
 				}
 			],
+			reviews: [
+				{
+					stars: 2,
+					text: 'This is really bad!',
+					author: 'ashton@kutcher.com'
+				},
+				{
+					stars: 4,
+					text: 'The smartwatch I was looking for!',
+					author: 'oga@tatsumi.com'
+				}
+			],
 			images: [
 				{
 					full: '/assets/catalyst-ranger_full.jpg',
@@ -177,6 +232,13 @@
 					battery: 'Up to 10 hours'
 				}
 			],
+			reviews: [
+				{
+					stars: 5,
+					text: 'I like how it combine with my iphone',
+					author: 'aoi@kunieda.com'
+				}
+			],
 			images: [
 				{
 					full: '/assets/tomtomRunner-silver_full.jpg',
@@ -201,6 +263,13 @@
 					color: 'Black, Blue, Red',
 					waterproof: 'No',
 					battery: 'Up to 5 days'
+				}
+			],
+			reviews: [
+				{
+					stars: 1,
+					text: 'This really sucks guys!',
+					author: 'jane@doe.com'
 				}
 			],
 			images: [
