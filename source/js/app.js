@@ -13,6 +13,14 @@
 		this.isSelected = function (checkTab) {
 			return this.tab === checkTab;
 		};
+	})
+	.controller('ReviewCtrl', function () {
+		this.review = {};
+
+		this.addReview = function (product) {
+			product.reviews.push(this.review);
+			this.review = {};
+		}
 	});
 
 	var watches = [

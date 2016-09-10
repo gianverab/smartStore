@@ -71,15 +71,15 @@
                             <cite>by: {{review.author}}</cite>
                           </blockquote>
                           <h4>Submit a review</h4>
-                          <form action="" name="reviewForm">
+                          <form name="reviewForm" ng-controller="ReviewCtrl as getReview" ng-submit="getReview.addReview(product)">
                             <div class="row">
                               <blockquote>
-                                <b>Stars: {{review.stars}}</b>
-                                <p>"{{review.text}}"</p>
-                                <cite>by: {{review.author}}</cite>
+                                <b>Stars: {{getReview.review.stars}}</b>
+                                <p>"{{getReview.review.text}}"</p>
+                                <cite>by: {{getReview.review.author}}</cite>
                               </blockquote>
                               <div class="col-xs-10 col-xs-offset-1">
-                                <select ng-model="review.stars">
+                                <select ng-model="getReview.review.stars">
                                   <option value="1">1 star</option>
                                   <option value="2">2 stars</option>
                                   <option value="3">3 stars</option>
@@ -88,10 +88,10 @@
                                 </select>
                               </div>
                               <div class="col-xs-10 col-xs-offset-1">
-                                <textarea ng-model="review.text" placeholder="Write a short review of the smartwatch" ></textarea>
+                                <textarea ng-model="getReview.review.text" placeholder="Write a short review of the smartwatch" ></textarea>
                               </div>
                               <div class="col-xs-10 col-xs-offset-1">
-                                <input ng-model="review.author" type="email" placeholder="name@company.com" />
+                                <input ng-model="getReview.review.author" type="email" placeholder="name@company.com" />
                               </div>
                               <div class="col-xs-10 col-xs-offset-1">
                                 <input type="submit" value="Submit"/>
