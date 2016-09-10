@@ -71,7 +71,7 @@
                             <cite>by: {{review.author}}</cite>
                           </blockquote>
                           <h4>Submit a review</h4>
-                          <form name="reviewForm" ng-controller="ReviewCtrl as getReview" ng-submit="getReview.addReview(product)">
+                          <form name="reviewForm" ng-controller="ReviewCtrl as getReview" ng-submit="reviewForm.$valid && getReview.addReview(product)" novalidate>
                             <div class="row">
                               <blockquote>
                                 <b>Stars: {{getReview.review.stars}}</b>
@@ -79,7 +79,7 @@
                                 <cite>by: {{getReview.review.author}}</cite>
                               </blockquote>
                               <div class="col-xs-10 col-xs-offset-1">
-                                <select ng-model="getReview.review.stars">
+                                <select ng-model="getReview.review.stars" required>
                                   <option value="1">1 star</option>
                                   <option value="2">2 stars</option>
                                   <option value="3">3 stars</option>
@@ -88,13 +88,13 @@
                                 </select>
                               </div>
                               <div class="col-xs-10 col-xs-offset-1">
-                                <textarea ng-model="getReview.review.text" placeholder="Write a short review of the smartwatch" ></textarea>
+                                <textarea ng-model="getReview.review.text" placeholder="Write a short review of the smartwatch" required></textarea>
                               </div>
                               <div class="col-xs-10 col-xs-offset-1">
-                                <input ng-model="getReview.review.author" type="email" placeholder="name@company.com" />
+                                <input ng-model="getReview.review.author" type="email" placeholder="name@company.com" required/>
                               </div>
                               <div class="col-xs-10 col-xs-offset-1">
-                                <input type="submit" value="Submit"/>
+                                <input type="submit" value="Submit" id="submitBtn" />
                               </div>
                             </div>
                           </form>

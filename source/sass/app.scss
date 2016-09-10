@@ -76,9 +76,11 @@ h1, h2, h3, h4, h5, h6 {
   		padding: 4px;
   		border-radius: 3px;
   		margin-bottom: 10px;
+  		border-color: $divider-color;
   	}
-  	input{
-  		box-shadow: none;
+  	#submitBtn{
+  		background-color: #009688;
+    	color: #fff;
   	}
 	}
 }
@@ -93,16 +95,32 @@ h1, h2, h3, h4, h5, h6 {
 	  border-top: 1px solid $divider-color;
 	}
 }
+/*** Overwriting Bootstrap & Normalize styles ***/
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
     color: #fff;
     background-color: $base-color;
 }
-
 .nav>li>a{
 	color: $dark-color;
 }
 .nav>li>a:hover {
     text-decoration: none;
     background-color: $light-color;
-}	
-
+}
+html input[type=email], html input[type=text]{
+	    border-style: solid;
+	    border-width: 1px;
+	    border-color: $divider-color;
+}
+button, html input[type=button], input[type=reset], input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+    border: none;
+}
+/*** Setting ng-styles for validation ***/
+.ng-invalid.ng-dirty{
+	border-color: #fa787e;
+}
+.ng-valid.ng-dirty{
+	border-color: $base-color;
+}
