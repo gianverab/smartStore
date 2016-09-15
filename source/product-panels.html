@@ -1,0 +1,57 @@
+<section>
+  <ul class="nav nav-pills">
+    <li ng-class="{active: panel.isSelected(1)}"><a href="" ng-click="panel.selectTab(1)">Description</a></li>
+    <li ng-class="{active: panel.isSelected(2)}"><a href="" ng-click="panel.selectTab(2)">Specs</a></li>
+    <li ng-class="{active: panel.isSelected(3)}"><a href="" ng-click="panel.selectTab(3)">Reviews</a></li>
+  </ul><!-- /.nav-pills -->
+  <div class="panel" ng-show="panel.isSelected(1)">
+    <h4>Description</h4>
+    <p>{{product.description}}</p>
+  </div>
+  <div class="panel" ng-show="panel.isSelected(2)">
+    <h4>Specs</h4>
+    <ul>
+      <li>Product Size: {{product.specs[0].size}}</li>
+      <li>Product Weight: {{product.specs[0].weight}}</li>
+      <li>Color: {{product.specs[0].color}}</li>
+      <li>Water Resistance: {{product.specs[0].waterproof}}</li>
+      <li>Battery Life: {{product.specs[0].battery}}</li>
+    </ul>
+  </div>
+  <div class="panel" ng-show="panel.isSelected(3)">
+    <h4>Reviews</h4>
+    <blockquote ng-repeat="review in product.reviews">
+      <b>Stars: {{review.stars}}</b>
+      <p>"{{review.text}}"</p>
+      <cite>by: {{review.author}}</cite>
+    </blockquote>
+    <h4>Submit a review</h4>
+    <form name="reviewForm" ng-controller="ReviewCtrl as getReview" ng-submit="reviewForm.$valid && getReview.addReview(product)" novalidate>
+      <div class="row">
+        <blockquote>
+          <b>Stars: {{getReview.review.stars}}</b>
+          <p>"{{getReview.review.text}}"</p>
+          <cite>by: {{getReview.review.author}}</cite>
+        </blockquote>
+        <div class="col-xs-10 col-xs-offset-1">
+          <select ng-model="getReview.review.stars" required>
+            <option value="1">1 star</option>
+            <option value="2">2 stars</option>
+            <option value="3">3 stars</option>
+            <option value="4">4 stars</option>
+            <option value="5">5 stars</option>
+          </select>
+        </div>
+        <div class="col-xs-10 col-xs-offset-1">
+          <textarea ng-model="getReview.review.text" placeholder="Write a short review of the smartwatch" required></textarea>
+        </div>
+        <div class="col-xs-10 col-xs-offset-1">
+          <input ng-model="getReview.review.author" type="email" placeholder="name@company.com" required/>
+        </div>
+        <div class="col-xs-10 col-xs-offset-1">
+          <input type="submit" value="Submit" id="submitBtn" />
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

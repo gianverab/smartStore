@@ -21,6 +21,12 @@
 			product.reviews.push(this.review);
 			this.review = {};
 		}
+	})
+	.directive('productPanels', function(){
+		return {
+			restrict: 'E',
+			templateUrl: 'product-panels.html'
+		};
 	});
 
 	var watches = [
