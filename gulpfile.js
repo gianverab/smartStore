@@ -23,6 +23,7 @@ var JS = './source/js/*.js',
 	CSS = './source/sass/*.scss',
 	SRC = './source/*.html',
 	IMG = './source/img/*',
+	DATA = './source/data/*.json',
 	DEST = './public'; 
 
 //Compile Sass, autoprefix, concat & minify
@@ -66,8 +67,16 @@ gulp.task('html', function(){
 		.pipe(notify({message: 'HTML compiled OK!'}));
 });
 
+//Data task
+gulp.task('data', function(){
+	gulp.src(DATA)
+		.pipe(plumber())
+	    .pipe(gulp.dest(DEST))
+		.pipe(notify({message: 'DATA compiled OK!'}));
+});
+
 //Server set up and watch
-gulp.task('serve', ['html', 'styles', 'scripts', 'images'], function (){
+gulp.task('serve', ['html', 'styles', 'scripts', 'images', 'data'], function (){
 	browsersync.init({
 		server: DEST
 	});
