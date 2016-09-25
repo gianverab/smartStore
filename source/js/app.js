@@ -5,7 +5,7 @@
 		var store = this;
 		store.products = [];
 
-		$http.get('./products.json').success(function (data){
+		$http.get('./data/products.json').success(function (data){
 			store.products = data;
 		});
 	}])

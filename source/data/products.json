@@ -28,12 +28,12 @@
 			],
 			"images": [
 				{
-					"full": "/assets/motaG2-black_full.jpg",
-					"thumb": "/assets/motaG2-black_thumb.jpg"
+					"full": "img/motaG2-black_full.jpg",
+					"thumb": "img/motaG2-black_thumb.jpg"
 				},
 				{
-					"full": "/assets/motaG2-silver_full.jpg",
-					"thumb": "/assets/motaG2-silver_thumb.jpg"
+					"full": "img/motaG2-silver_full.jpg",
+					"thumb": "img/motaG2-silver_thumb.jpg"
 				}
 			]
 		},
@@ -66,16 +66,16 @@
 			],
 			"images": [
 				{
-					"full": "/assets/zewatch3-black_full.jpg",
-					"thumb": "/assets/zewatch3-black_thumb.jpg"
+					"full": "img/zewatch3-black_full.jpg",
+					"thumb": "img/zewatch3-black_thumb.jpg"
 				},
 				{
-					"full": "/assets/zewatch3-gold_full.jpg",
-					"thumb": "/assets/zewatch3-gold_thumb.jpg"
+					"full": "img/zewatch3-gold_full.jpg",
+					"thumb": "img/zewatch3-gold_thumb.jpg"
 				},
 				{
-					"full": "/assets/zewatch3-silver_full.jpg",
-					"thumb": "/assets/zewatch3-silver_thumb.jpg"
+					"full": "img/zewatch3-silver_full.jpg",
+					"thumb": "img/zewatch3-silver_thumb.jpg"
 				}
 			]
 		},
@@ -108,16 +108,16 @@
 			],
 			"images": [
 				{
-					"full": "/assets/IfitVue-blue_full.jpg",
-					"thumb": "/assets/IfitVue-blue_thumb.jpg"
+					"full": "img/IfitVue-blue_full.jpg",
+					"thumb": "img/IfitVue-blue_thumb.jpg"
 				},
 				{
-					"full": "assets/IfitVue-sangria_full.jpg",
-					"thumb": "/assets/IfitVue-sangria_thumb.jpg"
+					"full": "img/IfitVue-sangria_full.jpg",
+					"thumb": "img/IfitVue-sangria_thumb.jpg"
 				},
 				{
-					"full": "/assets/IfitVue-purple_full.jpg",
-					"thumb": "/assets/IfitVue-purple_thumb.jpg"
+					"full": "img/IfitVue-purple_full.jpg",
+					"thumb": "img/IfitVue-purple_thumb.jpg"
 				}
 			]
 		},
@@ -145,16 +145,16 @@
 			],
 			"images": [
 				{
-					"full": "/assets/activitePop-black_full.jpg",
-					"thumb": "/assets/activitePop-black_thumb.jpg"
+					"full": "img/activitePop-black_full.jpg",
+					"thumb": "img/activitePop-black_thumb.jpg"
 				},
 				{
-					"full": "/assets/activitePop-blue_full.jpg",
-					"thumb": "/assets/activitePop-blue_thumb.jpg"
+					"full": "img/activitePop-blue_full.jpg",
+					"thumb": "img/activitePop-blue_thumb.jpg"
 				},
 				{
-					"full": "/assets/activitePop-white_full.jpg",
-					"thumb": "/assets/activitePop-white_thumb.jpg"
+					"full": "img/activitePop-white_full.jpg",
+					"thumb": "img/activitePop-white_thumb.jpg"
 				}
 			]
 		},
@@ -187,16 +187,16 @@
 			],
 			"images": [
 				{
-					"full": "/assets/catalyst-ranger_full.jpg",
-					"thumb": "/assets/catalyst-ranger_thumb.jpg"
+					"full": "img/catalyst-ranger_full.jpg",
+					"thumb": "img/catalyst-ranger_thumb.jpg"
 				},
 				{
-					"full": "/assets/catalyst-green_full.jpg",
-					"thumb": "/assets/catalyst-green_thumb.jpg"
+					"full": "img/catalyst-green_full.jpg",
+					"thumb": "img/catalyst-green_thumb.jpg"
 				},
 				{
-					"full": "/assets/catalyst-stealth_full.jpg",
-					"thumb": "/assets/catalyst-stealth_thumb.jpg"
+					"full": "img/catalyst-stealth_full.jpg",
+					"thumb": "img/catalyst-stealth_thumb.jpg"
 				}
 			]
 		},
@@ -224,12 +224,12 @@
 			],
 			"images": [
 				{
-					"full": "/assets/tomtomRunner-silver_full.jpg",
-					"thumb": "/assets/tomtomRunner-silver_thumb.jpg"
+					"full": "img/tomtomRunner-silver_full.jpg",
+					"thumb": "img/tomtomRunner-silver_thumb.jpg"
 				},
 				{
-					"full": "/assets/tomtomRunner-pink_full.jpg",
-					"thumb": "/assets/tomtomRunner-pink_thumb.jpg"
+					"full": "img/tomtomRunner-pink_full.jpg",
+					"thumb": "img/tomtomRunner-pink_thumb.jpg"
 				}
 			]
 		},
@@ -257,12 +257,12 @@
 			],
 			"images": [
 				{
-					"full": "/assets/striivFusion-colors_full.jpg",
-					"thumb": "/assets/striivFusion-colors_thumb.jpg"
+					"full": "img/striivFusion-colors_full.jpg",
+					"thumb": "img/striivFusion-colors_thumb.jpg"
 				},
 				{
-					"full": "/assets/striivFusion-display_full.jpg",
-					"thumb": "/assets/striivFusion-display_thumb.jpg"
+					"full": "img/striivFusion-display_full.jpg",
+					"thumb": "img/striivFusion-display_thumb.jpg"
 				}
 			]
 		}

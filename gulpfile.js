@@ -1,101 +1,102 @@
 //Include Dependencies
-var gulp = require('gulp'),
+			var gulp = require('gulp'),
 	//For CSS
-	sass = require('gulp-sass'),
+					sass = require('gulp-sass'),
 	autoprefixer = require('gulp-autoprefixer'),
-	concatcss = require('gulp-concat-css'),
-	minifycss = require('gulp-minify-css'),
+		 concatcss = require('gulp-concat-css'),
+		 minifycss = require('gulp-minify-css'),
 	//For JS
-	concat = require('gulp-concat'),
-	uglify = require('gulp-uglify'),
+				concat = require('gulp-concat'),
+				uglify = require('gulp-uglify'),
 	//For IMG
-	imagemin = require('gulp-imagemin'),
+			imagemin = require('gulp-imagemin'),
 	//For all files (if needed)
-	rename = require('gulp-rename'),
-	plumber = require('gulp-plumber'),
-	//Notify & Live reload
-	notify = require('gulp-notify'),
-	browsersync = require('browser-sync').create(),
-	reload = browsersync.reload;
+				rename = require('gulp-rename'),
+			    maps = require('gulp-sourcemaps'),
+			 		 del = require('del'),
+	//Live reload
+	 browsersync = require('browser-sync').create(),
+				reload = browsersync.reload;
 
 //Include Paths
-var JS = './source/js/*.js',
-	CSS = './source/sass/*.scss',
-	SRC = './source/*.html',
-	IMG = './source/img/*',
-	DATA = './source/data/*.json',
-	DEST = './public'; 
+var options = {
+	src: './source/',
+	dist: './public/'
+}
 
 //Compile Sass, autoprefix, concat & minify
 gulp.task('styles', function(){
-	gulp.src(CSS)
-		.pipe(plumber())
-		.pipe(sass({style: 'expanded'}))
+	gulp.src(options.src + 'sass/**/*.scss')
+		.pipe(maps.init())
+		.pipe(sass())
 		.pipe(autoprefixer('last 3 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
 		.pipe(concatcss('all.css'))
+		.pipe(minifycss())		
 		.pipe(rename('app.min.css'))
-		.pipe(minifycss())
-		.pipe(gulp.dest(DEST))
-		.pipe(notify({message: 'CSS compiled OK!'}));
+		.pipe(maps.write('./'))
+		.pipe(gulp.dest(options.dist + 'css/'));
 });
 
 //Compile scripts, concat & uglify
 gulp.task('scripts', function(){
-	gulp.src(JS)
-		.pipe(plumber())
+	gulp.src(options.src + 'js/**/*.js')
+		.pipe(maps.init())
 		.pipe(concat('all.js'))
 		.pipe(uglify())
 		.pipe(rename('app.min.js'))
-	    .pipe(gulp.dest(DEST))
-		.pipe(notify({message: 'Scripts compiled OK!'}));
+		.pipe(maps.write('./'))
+	  .pipe(gulp.dest(options.dist + 'js/'));
 });
 
 //Compress images
-gulp.task('images', function(){
-	gulp.src(IMG)
-		.pipe(plumber())
+gulp.task('assets', function(){
+	gulp.src(options.src + 'img/**/*')
 		.pipe(imagemin({optimizationLevel: 7}))
-	    .pipe(gulp.dest('./public/assets'))
-		.pipe(notify({message: 'Images compressed OK!'}));
+	  .pipe(gulp.dest(options.dist + 'img/'));
 });
 
 //HTML task
 gulp.task('html', function(){
-	gulp.src(SRC)
-		.pipe(plumber())
-	    .pipe(gulp.dest(DEST))
-		.pipe(notify({message: 'HTML compiled OK!'}));
+	gulp.src(options.src + '*.html')
+	    .pipe(gulp.dest(options.dist));
 });
 
 //Data task
 gulp.task('data', function(){
-	gulp.src(DATA)
-		.pipe(plumber())
-	    .pipe(gulp.dest(DEST))
-		.pipe(notify({message: 'DATA compiled OK!'}));
+	gulp.src(options.src + 'data/**/*.json', {base: options.src})
+	  .pipe(gulp.dest(options.dist));
 });
 
-//Server set up and watch
-gulp.task('serve', ['html', 'styles', 'scripts', 'images', 'data'], function (){
+//Server set up and reload
+gulp.task('serve', ['html', 'styles', 'scripts', 'assets', 'data'], function (){
 	browsersync.init({
-		server: DEST
+		server: options.dist
 	});
-	gulp.watch(SRC, ['html']);
-	gulp.watch(SRC).on('change', reload);
-	gulp.watch(CSS, ['styles']);
-	gulp.watch(CSS).on('change', reload);
-	gulp.watch(JS, ['scripts']);
-	gulp.watch(JS).on('change', reload);
-	gulp.watch(IMG, ['images']);
-	gulp.watch(IMG).on('change', reload);
+	gulp.watch([options.src + '*.html', 
+							options.src + 'sass/**/*.scss', 
+							options.src + 'js/**/*.js',
+							options.src + 'img/**/*', 
+							options.src + 'data/**/*.json']).on('change', reload);
 })
+
+//Build task
+gulp.task('build', ['serve']);
+
+//Clean task
+gulp.task('clean', function() {
+	del([options.dist]);
+});
+
 //Main watch task
 gulp.task('watch', function (){	
-	gulp.watch(SRC, ['html']);
-	gulp.watch(CSS, ['styles']);
-	gulp.watch(JS, ['scripts']);
-	gulp.watch(IMG, ['images']);
+	gulp.watch(options.src + '*.html', ['html']);
+	gulp.watch(options.src + 'sass/**/*.scss', ['styles']);
+	gulp.watch(options.src + 'js/**/*.js', ['scripts']);
+	gulp.watch(options.src + 'img/**/*', ['assets']);
+	gulp.watch(options.src + 'data/**/*.json', ['data']);
 });
 
 //Default gulp command
-gulp.task('default', ['styles', 'images', 'html', 'scripts', 'watch', 'serve']);
+gulp.task('default', ['watch'], function() {
+	gulp.start('build');
+});
